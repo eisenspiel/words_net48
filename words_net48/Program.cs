@@ -35,7 +35,7 @@ namespace words_net48
             //Создаём словарь, куда будем записывать результат подсчёта слов
             Dictionary<string, int> wordCount = new Dictionary<string, int>();
 
-            //Предлагаем выбрать, как считать слова: 1 - приватным методоном в одном потоке, 2 - публичным методом многопоточно, 3 - на сервере многопоточно
+            //Предлагаем выбрать, как считать слова: 1 - приватным методом в одном потоке, 2 - публичным методом многопоточно, 3 - на сервере многопоточно
             Console.WriteLine("\nPlease enter 1 if you want to use private metod with one thread\nor" +
                 "\nEnter 2 for public method with multiple threads\nor" +
                 "\nEnter anything other for counting words on the server side");
@@ -94,7 +94,7 @@ namespace words_net48
             return dict;
         }*/
         
-        
+        //метод отправляет текст и принимает словарь
         private static Dictionary<string, int> CountWordsWCF(string text)
         {
             Dictionary<string, int> dict;
@@ -105,7 +105,7 @@ namespace words_net48
             return dict;
         }
         
-
+        //метод выводит первые n пар словаря на консоль
         private static void printTop(Dictionary<string, int> dict, int n = 5)
         {
             Console.WriteLine($"Here's top {n} most frequent words from the book:");
